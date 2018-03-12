@@ -1,0 +1,35 @@
+---
+# Only needed for the main Sass file
+---
+
+@import 'normalize';
+
+body {
+	font-family: 'Crimson Text', serif;
+	font-size: 20px;
+	color: #42464c;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Lato', sans-serif;
+}
+
+.nav-title {
+	font-family: 'Crimson Text', serif;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: #2077b2;
+    border-bottom: 1px solid #d3d6db;
+}
+
+a:hover, a:visited:hover {
+    color: #42464c;
+    border-bottom-color: #2077b2;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
