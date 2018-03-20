@@ -81,7 +81,8 @@ _This is an image with a caption_
 ![Placeholder image](https://placehold.it/800x400 "Placeholder image")
 
 ![Image with caption](https://placehold.it/700x400 "Image with caption")
-_This is an image with a caption_
+_This is an image with a caption_{:.image-caption}
+
 
 # Code and Syntax Highlighting
 Use back-ticks for `inline code`. Multi-line code snippets are supported too through Pygments.
@@ -101,9 +102,11 @@ print s
 Adding `linenos` to the Pygments tag enables line numbers.
 
 {% highlight js  linenos %}
+```
 // Sample javascript code
 var s = "JavaScript syntax highlighting";
 alert(s);
+```
 {% endhighlight %}
 
 # Blockquotes
