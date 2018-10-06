@@ -9,9 +9,14 @@ layout: default
         <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
         <div class="catalogue-line"></div>
 
-        <p>
-        {{ post.content | strip_html | truncatewords: 30 }}
-        </p>
+		{% comment %}
+		This strange block will read a post and only display the first paragraph as a preview.
+		{% endcomment %}
+
+        {% assign preview = '' %}
+		{% assign paragraphs = post.content | split:'</p>' %}
+		{{ truncatedContent | append: paragraphs.first }}
+		{{ truncatedContent | append: '</p>' }}
 
     </div>
     {% endfor %}
@@ -25,5 +30,7 @@ layout: default
     <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
     {% endif %}
 
+	{% if paginator.next_page or paginator.previous_page %}
     <span>{{ paginator.page }}</span>
+    {% endif %}
 </div>

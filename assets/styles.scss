@@ -23,8 +23,16 @@ table {
     border-collapse: collapse;
 }
 
-table td {
-    padding: 0;
+table td, table th {
+    padding: 0 1em;
+}
+
+table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #eee;
 }
 
 time {
@@ -119,6 +127,14 @@ figure {
     margin-top: 0.5em;
 }
 
+.footnotes li {
+    transition: background-color 0.5s;
+}
+
+.footnotes li:target {
+    background-color: #ffffa8;
+}
+
 nav:after {
     content: "";
     display: table;
@@ -134,4 +150,8 @@ a, a:visited {
 a:hover, a:visited:hover {
     color: #42464c;
     border-bottom-color: #2077b2;
+}
+
+a.footnote {
+    border-bottom: none;
 }
