@@ -4,31 +4,27 @@
 	{% include head.html %}
 
 	<body>
-		<nav class="nav">
-			<div class="nav-container">
-				<a href="{{ site.baseurl }}/">
-					<h2 class="nav-title">{{ site.title }}</h2>
-				</a>
-				<ul>
-					<li><a href="{{ '/about' | prepend: site.baseurl }}">About</a></li>
-					<li><a href="{{ site.baseurl }}/">Posts</a></li>
-				</ul>
-			</div>
-		</nav>
-		<div class="main">
-			<main>
-			{{ content }}
-			</main>
+		<div class="container">
+			<div class="gutters">
+				<nav>
+					<div class="title">
+						<a href="{{ site.baseurl }}/">
+							<h2 class="mono">{{ site.title }}</h2>
+						</a>
+						<small class="mono">When I'm not beepin, I'm usually boopin</small>
+					</div>
 
-			<div>
-				<ul>
-					<li><a href="#">Project 1</a></li>
-					<li><a href="#">Project 2</a></li>
-				</ul>
+					<div class="links">
+						<a href="https://github.com/bridadan"><img src="/assets/github.png"></a>
+					</div>
+				</nav>
+				<main>
+				{{ content }}
+				</main>
+
+				<footer>
+				</footer>
 			</div>
 		</div>
-
-		<footer>
-		</footer>
 	</body>
 </html>
