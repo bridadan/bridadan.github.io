@@ -1,4 +1,5 @@
-title: The Beep Boop Blog
+title: Brian Daniels
+site_caption: "Projects and occasional blogs"
 email: test@test.com
 description: "Projects and occasional blogs by Brian Daniels"
 baseurl: ""
@@ -18,7 +19,7 @@ sass:
     style: compressed
 
 # Permalinks
-permalink: /:year-:month-:day/:title
+paginate_path: blog/:year-:month-:day/:title
 paginate: 10
 
 # Exclude from processing.

@@ -2,35 +2,6 @@
 layout: default
 ---
 
-<div class="catalogue">
-    {% for post in paginator.posts %}
-    <div>
-        <h1 class="catalogue-title"><a href="{{ post.url | prepend: site.baseurl }}" class="catalogue-item">{{ post.title }}</a></h1>
-        <time datetime="{{ post.date }}" class="catalogue-time">{{ post.date | date: "%B %d, %Y" }}</time>
-        <div class="catalogue-line"></div>
-
-		{% comment %}
-		This strange block will read a post and only display the first paragraph as a preview.
-		{% endcomment %}
-
-        {% assign preview = '' %}
-		{% assign paragraphs = post.content | split:'</p>' %}
-		{{ truncatedContent | append: paragraphs.first }}
-		{{ truncatedContent | append: '</p>' }}
-
-    </div>
-    {% endfor %}
-</div>
-
-<div class="pagination">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="left arrow">&#8592;</a>
-    {% endif %}
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="right arrow">&#8594;</a>
-    {% endif %}
-
-	{% if paginator.next_page or paginator.previous_page %}
-    <span>{{ paginator.page }}</span>
-    {% endif %}
+<div>
+  {{ content }}
 </div>
