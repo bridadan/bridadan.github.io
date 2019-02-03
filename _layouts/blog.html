@@ -14,9 +14,8 @@ layout: default
 		{% endcomment %}
 
         {% assign preview = '' %}
-		{% assign paragraphs = post.content | split:'</p>' %}
-		{{ truncatedContent | append: paragraphs.first }}
-		{{ truncatedContent | append: '</p>' }}
+		{% assign break = post.content | split:'<!--break-->' %}
+		{{ truncatedContent | append: break.first }}
 
     </div>
     {% endfor %}
