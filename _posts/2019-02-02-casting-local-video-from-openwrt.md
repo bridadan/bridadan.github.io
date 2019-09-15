@@ -63,10 +63,22 @@ The wonderful ffmpeg project is perfect for this task. So I ran this command to 
 ffmpeg -i <input video> -vcodec copy -acodec ac3 -sn <output video>.mp4
 {% endhighlight %}
 
-Very quickly, the breakdown of these arguments are:
+The breakdown of these arguments are:
 
 - `-i <input video>` - This should be the path to your input video. For me this was my MKV file.
 - `-vcodec copy` - Copy video track, don't re-encode it
 - `-acodec ac3` - Re-encode the audio track to the AC-3 format
 - `-sn` - Drop the subtitle track :(
 - `<output video>.mp4` - Filename for the output video
+
+## Hosting the videos
+
+The next step is to get the videos on my home network. Normally you'd run something like a server or a Raspberry Pi to do this, but I didn't want another machine running all the time and I didn't want to use one of my Pis. Since my router is running OpenWrt, I used that to host them since the router is always on.
+
+### Streaming
+
+As mentioned above, the Chromecast only supports a few streaming protocols. The three common ones you see are MPEG-DASH, SmoothStreaming, and HTTP Live Streaming. These are popular among most streaming services because they support DRM. They also support adaptive switching of quality, which is totally unneeded in my case. The only other streaming protocol it supports is "progressive download without adaptive switching". That sounds great! But what is "progressive download"?
+
+Turns out its a [server-side capability](https://en.wikipedia.org/wiki/Progressive_download). It allows the consumer of a download to start playing back the media before the download completes. It also allows you to seek throughout the media without downloading the entire file. It turns out the default webserver on OpenWrt (called [uHTTPd](https://openwrt.org/docs/guide-user/services/webserver/http.uhttpd)) does not support this, but [lighttpd](https://openwrt.org/docs/guide-user/services/webserver/lighttpd) does (at least as of version 1.4.48-3).
+
+This has the downside of running two different web servers on my router (one for the router's web interface, the other for my videos), but it was quick to configure and I haven't noticed any issues so far. You need to bind the second web server to a separate port number since the default server uses port 80. It also has a built-in directory listing option so you can browse your files from your phone's browser without running a separate application. This allows you to select the video on your phone and use Chrome's cast action to play the movie on your Chromecast.
