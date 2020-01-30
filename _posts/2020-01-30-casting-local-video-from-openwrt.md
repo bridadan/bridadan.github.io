@@ -18,7 +18,7 @@ What I don't want to do:
 
 - Run a server all of the time
 - Run a server _some_ of the time
-- Avoid any type of transcoding (reencoding while streaming)
+- Avoid any type of transcoding (re-encoding while streaming)
 - Write a custom Chromecast app (yet?...)
 
 What I need it to do:
@@ -51,7 +51,7 @@ Normally the supported subtitle formats are dictated by the video container. The
 
 ## Converting the videos
 
-I didn't want to reencode the video track if at all possible. Turns out I encode all my videos in H.264, so I could just copy that to the MP4 File.
+I didn't want to re-encode the video track if at all possible. Turns out I encode all my videos in H.264, so I could just copy that to the MP4 File.
 
 I had quite a few audio tracks that were in the DTS format. This is very easily converted to AC-3, which I did.
 
@@ -79,7 +79,7 @@ The next step is to get the videos on my home network. Normally you'd run someth
 
 As mentioned above, the Chromecast only supports a few streaming protocols. The three common ones you see are MPEG-DASH, SmoothStreaming, and HTTP Live Streaming. These are popular among most streaming services because they support DRM. They also support adaptive switching of quality, which is totally unneeded in my case. The only other streaming protocol it supports is "progressive download without adaptive switching". That sounds great! But what is "progressive download"?
 
-Turns out its a [server-side capability](https://en.wikipedia.org/wiki/Progressive_download). It allows the consumer of a download to start playing back the media before the download completes. It also allows you to seek throughout the media without downloading the entire file. It turns out the default webserver on OpenWrt (called [uHTTPd](https://openwrt.org/docs/guide-user/services/webserver/http.uhttpd)) does not support this, but [lighttpd](https://openwrt.org/docs/guide-user/services/webserver/lighttpd) does (at least as of version 1.4.48-3).
+Turns out its a [server-side capability](https://en.wikipedia.org/wiki/Progressive_download). It allows the consumer of a download to start playing back the media before the download completes. It also allows you to seek throughout the media without downloading the entire file. It turns out the default web server on OpenWrt (called [uHTTPd](https://openwrt.org/docs/guide-user/services/webserver/http.uhttpd)) does not support this, but [lighttpd](https://openwrt.org/docs/guide-user/services/webserver/lighttpd) does (at least as of version 1.4.48-3).
 
 This has the downside of running two different web servers on my router (one for the router's web interface, the other for my videos), but it was quick to configure and I haven't noticed any issues so far. You need to bind the second web server to a separate port number since the default server uses port 80. It also has a built-in directory listing option so you can browse your files from your phone's browser without running a separate application. This allows you to select the video on your phone and use Chrome's cast action to play the movie on your Chromecast.
 

@@ -9,7 +9,7 @@ These are my initial findings regarding DisplayPort Multi-Stream Transport (MST)
 
 ## Background
 
-DisplayPort is a video standard specified by [VESA](https://www.vesa.org/displayport-developer/about-displayport/). Unlike HDMI, impelenters of DisplayPort devices do not need to pay an annual fee or per-unit royaltees to use the technology. DisplayPort has had many versions over the years, with the most recent version at the time of writing being **1.4**. MST was not added to the spec until version **1.2**, so we'll only be investigating versions 1.2 and later.
+DisplayPort is a video standard specified by [VESA](https://www.vesa.org/displayport-developer/about-displayport/). Unlike HDMI, implementers of DisplayPort devices do not need to pay an annual fee or per-unit royalties to use the technology. DisplayPort has had many versions over the years, with the most recent version at the time of writing being **1.4**. MST was not added to the spec until version **1.2**, so we'll only be investigating versions 1.2 and later.
 
 ### DisplayPort Versions
 
@@ -17,7 +17,7 @@ The following is a very brief summary of the [Wikipedia entry](https://en.wikipe
 
 #### Version 1.2
 
-MST was first introuced in this version. Below lists some of the valid monitor configurations:
+MST was first introduced in this version. Below lists some of the valid monitor configurations:
 
 | Display Resolution @ 60Hz | Max Number of Monitors |
 |:-------------:|:-------------:|
@@ -48,13 +48,13 @@ A DisplayPort "source device" provides a video stream to be used by a "sink devi
 
 Most desktops and laptops (specifically x86 machines) use GPUs from the following vendors: Nvidia, AMD, and Intel. Since the use of MST is most prevalent with workstation setups, all of these vendors have broad support for MST in hardware.
 
-#### Embeded Linux Devices (smartphones, SBCs, etc)
+#### Embedded Linux Devices (smartphones, SBCs, etc)
 
 Typically these devices are driven by Arm SoCs. Due to the diversity of the Arm ecosystem, there are many GPU implementations, all of them with varying support for DisplayPort in general, let alone MST. From all of my research, I have yet to find an SoC that advertises support for DisplayPort MST OR find anyone who has written about using it on these devices. Most implementations focus on Embedded DisplayPort (eDP), as Arm SoCs are typically used in devices that have their own screen.
 
 ##### Embedded DisplayPort (eDP)
 
-Embedded DisplayPort is a version of DisplayPort that is optimized for internal connections to displays. It is versioned separately from the external DisplayPort standard, but they are closely related. eDP adds support for power saving features, like refresh rate switching (which was then backported to DisplayPort as FreeSync and G-Sync) and partial-frame updates.
+Embedded DisplayPort is a version of DisplayPort that is optimized for internal connections to displays. It is versioned separately from the external DisplayPort standard, but they are closely related. eDP adds support for power saving features, like refresh rate switching (which was then back-ported to DisplayPort as FreeSync and G-Sync) and partial-frame updates.
 
 Like I mentioned earlier, many SoCs only provide an eDP output. This begs the question: can you use the eDP output to connect to normal DisplayPort displays? I haven't found any proof of someone doing this, but doing the opposite (DisplayPort output to an eDP display) does [appear to be possible](http://emerythacks.blogspot.com/2013/04/connecting-ipad-retina-lcd-to-pc.html).
 
@@ -66,7 +66,7 @@ Sink devices accept video streams provided by the source devices we discussed ab
 
 ### Branch devices
 
-Branch devices accept an MST signal from either a source device or another branch device and transmit atleast one DisplayPort link. To be honest, my terminology is a little wonky here, so I think this is better explained by a picture:
+Branch devices accept an MST signal from either a source device or another branch device and transmit at least one DisplayPort link. To be honest, my terminology is a little wonky here, so I think this is better explained by a picture:
 
 ![DisplayPort MST: source, sink, and branch devices](/assets/displayport_mst.png "DisplayPort MST: source, sink, and branch devices")
 _DisplayPort topology with a single source device and multiple branch and sink devices_{:.image-caption}
@@ -80,7 +80,7 @@ MST Hubs are branch devices that accept one MST DisplayPort signal and "split" i
 ![Startech Mini DisplayPort to DisplayPort Multi-Monitor Splitter - 3-Port MST Hub](https://sgcdn.startech.com/005329/media/products/gallery_large/MSTMDP123DP.main.jpg "Startech Mini DisplayPort to DisplayPort Multi-Monitor Splitter - 3-Port MST Hub")
 _Startech Mini DisplayPort to DisplayPort Multi-Monitor Splitter - 3-Port MST Hub_{:.image-caption}
 
-#### Daisy-chaining Montitors
+#### Daisy-chaining Monitors
 
 ## Software Support
 
@@ -88,7 +88,7 @@ _Startech Mini DisplayPort to DisplayPort Multi-Monitor Splitter - 3-Port MST Hu
 
 ### Android Support
 
-Absolutely none as far as I can tell. Not a single mention in anything I've read. Though this makes sense considering the support of DisplayPort MST on GPUs prevelant in Arm SoCs (read: not much/none).
+Absolutely none as far as I can tell. Not a single mention in anything I've read. Though this makes sense considering the support of DisplayPort MST on GPUs prevalent in Arm SoCs (read: not much/none).
 
 ## Final Thoughts
 
