@@ -8,8 +8,6 @@ I currently work on internal tooling at [Arm](http://arm.com/).
 
 In my spare time I've been writing a portable C library for [Snapcast](https://github.com/badaix/snapcast) called [libsnapcast](https://github.com/bridadan/libsnapcast/).
 
-{% comment %}
 You can read about some of my side projects [on my blog](/blog).
-{% endcomment %}
 
 
