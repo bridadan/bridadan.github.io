@@ -1,0 +1,5 @@
+name: 'Checks'
+description: 'Checks to run on the website'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
