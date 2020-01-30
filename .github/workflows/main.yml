@@ -1,10 +1,10 @@
-name: Greet Everyone
-on: [push]
+name: Checks
+on: [push, pull_request]
 
 jobs:
-  hello_world_job:
+  checks_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Run checks
     steps:
     # To use this repository's private action, you must check out the repository
     - name: Checkout
