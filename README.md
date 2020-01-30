@@ -4,7 +4,7 @@ My personal site
 
 ## Running locally
 
-1. Install Ruby
+1. Install Ruby 2.7
 1. Run the following commands:
 
 ```bash
