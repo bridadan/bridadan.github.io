@@ -17,6 +17,8 @@ layout: default
 		{% assign break = post.content | split:'<!--break-->' %}
 		{{ truncatedContent | append: break.first }}
 
+        <a href="{{ post.url | prepend: site.baseurl }}">Read more</a>
+
     </div>
     {% endfor %}
 </div>
