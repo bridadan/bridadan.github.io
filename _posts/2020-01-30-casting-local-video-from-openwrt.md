@@ -85,4 +85,4 @@ This has the downside of running two different web servers on my router (one for
 
 ## Conclusion
 
-This solution works! The cost is a bit of processing of your video files before they're ready to be streamed, but otheriwse I haven't had any issues. The downside of the required format is you lose capabilities like audio track switching and subtitles. In the future I will most likely use some kind of server to get those features, but for now this is working.
+This solution works! The cost is a bit of processing of your video files before they're ready to be streamed, but otherwise I haven't had any issues. The downside of the required format is you lose capabilities like audio track switching and subtitles. In the future I will most likely use some kind of server to get those features, but for now this is working.
