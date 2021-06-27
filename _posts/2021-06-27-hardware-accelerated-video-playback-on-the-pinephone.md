@@ -9,11 +9,11 @@ I was able to get hardware accelerated video decoding working on the PinePhone. 
 
 I don't see any stutters and the audio sounds great and synced. The total CPU usage was 10-11% and the `gst-play-1.0` app was using 33% of one CPU according to `top`. Here's a brief video of the playback:
 
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TKQNHalxFF0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <!--break-->
 
-The necessary features in GStreamer are not currently present in any releases, so you need to download and compile it from source. The following commands should do that:
+The necessary features in GStreamer are not currently present in any release, so you need to download and compile it from source. The following commands should do that:
 
 ```
 git clone https://gitlab.freedesktop.org/gstreamer/gst-build.git
