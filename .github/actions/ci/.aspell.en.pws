@@ -1,12 +1,16 @@
-personal_ws-1.1 en 29
+personal_ws-1.1 en 34 
+Caminandes
 Chromecast
 DisplayPort
-displayport
 FreeSync
 GPUs
+GStreamer
+Llamigos
 Monitors
 Nvidia
 OpenWrt
+Phosh
+PinePhone
 SBCs
 SmoothStreaming
 SoCs
@@ -18,6 +22,7 @@ acodec
 bundler
 codec
 codecs
+displayport
 endhighlight
 ffmpeg
 implementers
