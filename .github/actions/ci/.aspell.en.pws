@@ -1,16 +1,19 @@
-personal_ws-1.1 en 34 
+personal_ws-1.1 en 39 
 Caminandes
 Chromecast
 DisplayPort
 FreeSync
 GPUs
 GStreamer
+GStreamer's
 Llamigos
 Monitors
 Nvidia
+OpenGL
 OpenWrt
 Phosh
 PinePhone
+Rafostar
 SBCs
 SmoothStreaming
 SoCs
@@ -30,6 +33,8 @@ jekyll
 lighttpd
 muxed
 passthrough
+playbin
+renderer
 transcoding
 uHTTPd
 vcodec
