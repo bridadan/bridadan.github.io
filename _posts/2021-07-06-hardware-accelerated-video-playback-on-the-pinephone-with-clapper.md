@@ -7,8 +7,7 @@ published: true
 
 In my [previous post](/2021/06/27/hardware-accelerated-video-playback-on-the-pinephone.html), I showed a way to get hardware accelerated video playback working on the PinePhone. However, it required using the command line to launch the video and it was not possible to control the playback with the touchscreen.
 
-Thanks to the efforts of [Rafostar](https://github.com/Rafostar), it is now possible to have full hardware accelerated video playback on the PinePhone within a GTK application with an adaptive UI! This capability is present on the `master` branch of [Clapper](https://github.com/Rafostar/clapper).
-
+Thanks to the efforts of [Rafostar](https://github.com/Rafostar), it is now possible to have full hardware accelerated video playback on the PinePhone within a GTK application with an adaptive UI! This capability is present on the `master` branch of [Clapper](https://github.com/Rafostar/clapper). The video shown below was encoded at 1080p with the H.264 codec.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BvmRV6IIGGo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
